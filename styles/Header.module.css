@@ -1,0 +1,47 @@
+.headersection {
+    background-image: url(../public/bg.jpg);
+    position: relative;
+    min-height: 300px;
+    background-position: 50%;
+    background-size: cover;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+}
+.container {
+    max-width: 700px;
+}
+@media (min-width: 992px){
+.container {
+    max-width: 960px;
+}
+}
+
+@media (min-width: 768px){
+.container {
+    max-width: 720px;
+}}
+@media (min-width: 576px){
+.container {
+    max-width: 540px;
+}
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
