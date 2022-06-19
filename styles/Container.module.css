@@ -1,15 +1,12 @@
-.pagebody {
+/* .pagebody {
     margin-top: -50px;
     padding: 20px;
     z-index: 100;
     background: #ffe792;
     min-height: 800px;
     width: 700px;
-}
+} */
 
-.container {
-    width: 700px;
-}
 @media (min-width: 992px){
 .container {
     max-width: 960px;
@@ -20,16 +17,22 @@
 .container {
     max-width: 720px;
 }}
-@media (min-width: 576px){
+@media (max-width: 576px){
 .container {
     max-width: 540px;
 }
 }
 
-.container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px;
+.container{
+    width: 700px;
+    padding: 20px;
+    padding-bottom: 1.5rem!important;
+    padding-top: 1.5rem!important;
     margin-right: auto;
     margin-left: auto;
+    margin-top: -50px;
+    min-height: 400px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid white;
 }

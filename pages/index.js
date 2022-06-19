@@ -1,6 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import Container from '../components/Container'
+import AllCompetitions from '../components/AllCompetitions'
 import Header from '../components/Header'
 import styles from '../styles/Home.module.css'
 
@@ -12,9 +11,8 @@ export default function Home() {
         <meta name="description" content="Developed By MoscDev" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header/>
-      <Container/>
-      
+      <Header />
+      <AllCompetitions />
     </div>
-  )
+  );
 }
