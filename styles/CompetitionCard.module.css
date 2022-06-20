@@ -1,26 +1,26 @@
-.CompetitionCard{
-    display: flex;
-    box-shadow: 0 .2rem rgba(0, 0, 0, 0.103)!important;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    border-radius: 10px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    color: #4d4d4d;
-    column-gap: 10px;
-border-radius: 0.2rem!important;
-word-wrap: break-word;
-padding: 1.5rem!important;
-width: 314px;
-cursor: pointer;
-box-sizing: border-box;
+.CompetitionCard {
+  display: flex;
+  box-shadow: 0 .4rem 1rem rgba(0,0,0,.175)!important;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #4d4d4d;
+  column-gap: 10px;
+  border-radius: 0.2rem !important;
+  word-wrap: break-word;
+  padding: 1.5rem !important;
+  width: 314px;
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: all ease 0.3s;
 
-/* margin-bottom: 1rem; */
+  /* margin-bottom: 1rem; */
 }
-.CompetitionCard:hover{
- -webkit-box-shadow: 0 .6rem .6rem rgba(0, 0, 0, 0.103)!important;
-    box-shadow: 0 .6rem .6rem rgba(0,0,0,.175)!important;
+.CompetitionCard:hover {
+ box-shadow: 0 .8rem 1.5rem rgba(0,0,0,.175)!important;
+  transition: all ease 0.3s;
 }
-
