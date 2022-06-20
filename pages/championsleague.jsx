@@ -4,6 +4,7 @@ import AllCompetitions from '../components/AllCompetitions'
 import CompetitionCard from '../components/CompetitionCard';
 import Header from '../components/Header'
 import styles from '../styles/Home.module.css'
+import style from "../styles/championsleague.module.css";
 var axios = require("axios");
 
 function championsleague() {
@@ -41,15 +42,65 @@ useEffect(() => {
       </Head>
       <Header />
       <h4>All Competitions</h4>
+
       {standings ? (
         <div className="competitionwrap">
+          <div class={style.standingsgroup}>
+            <h5 class={style.groupname}>
+              GROUP A
+            </h5>
+            <div class={style.standingstable}>
+              <div
+                class={
+                  style["standing-row"] +
+                  "" +
+                  style["standing-header"] +
+                  "" +
+                  style["text-muted"]
+                }
+              >
+                <div class="position"></div>
+                <div class="team-name">Team</div>
+                <div class="mp">MP</div>
+                <div class="win">W</div>
+                <div class="draw">D</div>
+                <div class="lose">L</div>
+                <div class="gf">GF</div>
+                <div class="ga">GA</div>
+                <div class="points">Pts</div>
+              </div>
+            </div>
+          </div>
           {standings?.map((standing) => (
-            <div
-              key={standing.group}
-            >
-                <p>{standing.group}</p>
-                <p>{standing.table}</p>
-                <p></p>
+            <div key={standing.group}>
+              <p>{standing.group}</p>
+              <p>{standing.table}</p>
+              <div class={style.standingsgroup}>
+                <h5 class={style.groupname}>
+                  <strong>GROUP A</strong>
+                </h5>
+                <div class={style.standingstable}>
+                  <div
+                    class={
+                      style["standing-row"] +
+                      "" +
+                      style["standing-header"] +
+                      "" +
+                      style["text-muted"]
+                    }
+                  >
+                    <div class="position"></div>
+                    <div class="team-name">Team</div>
+                    <div class="mp">MP</div>
+                    <div class="win">W</div>
+                    <div class="draw">D</div>
+                    <div class="lose">L</div>
+                    <div class="gf">GF</div>
+                    <div class="ga">GA</div>
+                    <div class="points">Pts</div>
+                  </div>
+                </div>
+              </div>
             </div>
           ))}
         </div>
