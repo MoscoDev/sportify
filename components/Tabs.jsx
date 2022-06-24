@@ -2,17 +2,18 @@ import Link from "next/link";
 import React, { useState } from "react";
 import MatchCard from "./MatchCard";
 import Standings from "./Standings";
-import style from "../styles/championsleague.module.css";
+import styl from "../styles/Container.module.css";
 
-const Tabs = ({comp,matches,standings,week}) => {
+
+const Tabs = ({loading ,comp,matches,standings,week}) => {
  
   const [currentTab, setCurrentTab] = useState("1");
   const tabs = [
     {
       id: 1,
       tabTitle: "STANDINGS",
-      content: matches ? ( <Standings standings={standings} />) : (
-        <div style={{ display: "block", width: "632px" }}>
+      content: !loading ? ( <Standings standings={standings} />) : (
+        <div style={{ display:"flex", marginTop:"1rem", justifyContent:"center !important"}}>
           <div class={styl.ldsripple}>
             <div></div>
             <div></div>
@@ -23,7 +24,7 @@ const Tabs = ({comp,matches,standings,week}) => {
     {
       id: 2,
       tabTitle: "MATCHES",
-      content: matches ? (
+      content: !loading ? (
         <MatchCard matches={matches} week={week} />
       ) : (
         <div style={{ display: "block", width: "632px" }}>

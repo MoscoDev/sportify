@@ -1,10 +1,6 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import AllCompetitions from "../../components/AllCompetitions";
-import CompetitionCard from "../../components/CompetitionCard";
-import Header from "../../components/Header";
 import styl from "../../styles/Container.module.css";
-import styles from "../../styles/Home.module.css";
 import style from "../../styles/championsleague.module.css";
 import Link from "next/link";
 
@@ -117,13 +113,8 @@ var second_config = {
         });
   }, []);
   return (
-    <div>
-      <Head>
-        <title>Champions League</title>
-        <meta name="description" content="Developed By MoscDev" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div>
+    <Layout>
+<div>
         <div className="breadcrumbs py-2 mb-3">
           <Link href={"/"}>
             <a className="fancy-link router-link-active">All Competitions</a>
@@ -160,7 +151,15 @@ var second_config = {
           </div>
         </div>
       </div>
-    </div>
+    </Layout>
+    // <div>
+    //   <Head>
+    //     <title>Champions League</title>
+    //     <meta name="description" content="Developed By MoscDev" />
+    //     <link rel="icon" href="/favicon.ico" />
+    //   </Head>
+      
+    // </div>
   );
 }
 

@@ -8,6 +8,7 @@ const Post = () => {
    const [matches, setMatches] = useState([]);
    const [comp, setComp] = useState([]);
    const [week, setweek] = useState([]);
+   const [loading, setLoading] = useState(true);
   const [standings, setStandings] = useState([]);
    const [location, setLocation] = useState("")
    const usePathname = () => {
@@ -37,11 +38,16 @@ setLocation(location);
         // console.log(JSON.stringify(response.data.matches));
         setMatches(response.data.matches);
         setComp(response.data.competition.name);
-        setweek(response.data.filters.matchday);
+        setweek(response.data.filters.matchday); if(standings !== []){
+            setLoading(false)
+          };
       })
       .catch(function (error) {
         console.log(error);
-      });
+      })
+      // .finally(() => {
+      //   setLoading(false);
+      // });
       var config = {
         method: "get",
         url:
@@ -57,10 +63,17 @@ setLocation(location);
         .then(function (response) {
           // console.log(JSON.stringify(response.data.standings[0].table));
           setStandings(response.data.standings[0].table);
+          if(standings !== []){
+            setLoading(false)
+          };
         })
         .catch(function (error) {
           console.log(error);
-        });
+        })
+        // .finally((response) => {
+        //   response.statusCode
+        //   setLoading(false);
+        // });
 },[] ,location)
 
   
@@ -70,7 +83,7 @@ setLocation(location);
     
   }, []);
   
-  return (<Tabs comp={comp} matches={matches} week={week} standings={standings}/>)
+  return (<Tabs loading={loading} comp={comp} matches={matches} week={week} standings={standings}/>)
 };
 
 
