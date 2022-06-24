@@ -4,10 +4,10 @@ function CompetitionCard({emblem, title, area}) {
   return (
     <div className={style.CompetitionCard}>
       {/* <div className="emblem"> */}
-        <img src={emblem} alt="" width={80}/>
+        <img src={emblem} alt=""style={{maxWidth:"80px"}}/>
       {/* </div> */}
       <div className="text">
-        <h4 className="title">{title}</h4>
+        <h4 className="titles">{title}</h4>
         <p>{area}</p>
       </div>
     </div>

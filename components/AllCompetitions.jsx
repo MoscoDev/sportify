@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Container from "./Container";
 import style from "../styles/Container.module.css";
 import CompetitionCard from "./CompetitionCard";
+import Link from "next/link";
 var axios = require("axios");
 function AllCompetitions() {
   const [competitions, setCompetitions] = useState([])
@@ -19,7 +20,6 @@ useEffect(() => {
 
   axios(config)
     .then(function (response) {
-      console.log(JSON.stringify(response.data.competitions));
       setCompetitions(response.data.competitions)
     })
     .catch(function (error) {
@@ -27,51 +27,50 @@ useEffect(() => {
     });
 
   }, [])
-  //    useEffect(() => {
-  //      // const data = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
-  //      // const res = await data.json();
-  //      // setninja(res);
-  //       var axios = require("axios");
-
-  //       var config = {
-  //         method: "get",
-  //         url: "https://api.football-data.org//v4/competitions",
-  //         headers: {
-  //           "X-Auth-Token": "12f41e2536a4437ca924f3d11fd95ab4",
-  //             "Content-Type": "application/json",
-  //             "Access-Control-Allow-Origin": "*",
-  //             "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-
-  //         },
-  //       };
-
-  //     //  console.log(competitions);
-  //    }, []);
   return (
-    <div className={style.container}>
-      
-        <h4>All Competitions</h4>
-        {competitions ? (
-          <div className="competitionwrap">
-            {competitions?.map((competition) => (
+    <div>
+      <h4>All Competitions</h4>
+      {competitions ? (
+        <div className="competitionwrap">
+          {competitions?.map((competition) => (
+            <Link key={competition.id}
+              href={
+                competition?.code !== "CL"
+                  ? {
+                      pathname: "/competitions/[slug]",
+                      query: { slug: competition.code },
+                    }
+                  : { pathname: "/competitions/championsleague" }
+              }
+            >
+            <a className="style."
+              // style={{ display: "block", width: "48%" }}
+              // href={{
+                // competition?.code !== "CL"
+                //   ? `/competitions/${[competition.code]}`
+                     
+                //   :"/competitions/championsleague" 
+              // }}
+            >
               <CompetitionCard
                 key={competition.id}
                 emblem={competition.emblem}
                 title={competition.name}
                 area={competition.area.name}
               />
-            ))}
-          </div>
-        ) : (<div className={style.pagebody}>
+            </a>
+             </Link>
+          ))}
+        </div>
+      ) : (
+        <div>
           <div class={style.ldsripple}>
             <div></div>
             <div></div>
           </div>
-          </div>
-        )}
-      </div>
-      
-   
+        </div>
+      )}
+    </div>
   );
 }
 // AllCompetitions.getInitialProps = async (ctx) => {
