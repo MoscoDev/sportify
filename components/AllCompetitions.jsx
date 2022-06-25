@@ -26,7 +26,7 @@ useEffect(() => {
       console.log(error);
     });
 
-  }, [])
+  })
   return (
     <div>
       <h4>All Competitions</h4>

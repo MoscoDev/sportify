@@ -11,12 +11,12 @@ const Post = () => {
    const [loading, setLoading] = useState(true);
   const [standings, setStandings] = useState([]);
    const [location, setLocation] = useState("")
-   const usePathname = () => {
+   const Pathname = () => {
      location = window.location.pathname 
     //  return location;
    };
 useEffect(() => {
-  usePathname()
+  Pathname()
 setLocation(location);
 
  

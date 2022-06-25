@@ -6,7 +6,7 @@ import Link from "next/link";
 
 var axios = require("axios");
 
-function championsleague() {
+function Championsleague() {
   const [standings, setStandings] = useState([]);
   const [matches, setMatches] = useState([]);
 
@@ -47,8 +47,7 @@ const [currentTab, setCurrentTab] = useState("1");
             ))
           ) : (
             <div className={styl.ldsripple}>
-              "loading"
-              <div>loading</div>
+              <div></div>
               <div></div>
             </div>
           )}
@@ -61,7 +60,7 @@ const [currentTab, setCurrentTab] = useState("1");
       title: "MATCHES",
       content: (
         <div style={{ display: "block", width: "632px" }}>
-          <div class={styl.ldsripple}>
+          <div className={styl.ldsripple}>
             <div></div>
             <div></div>
           </div>
@@ -160,4 +159,4 @@ const [currentTab, setCurrentTab] = useState("1");
   );
 }
 
-export default championsleague;
+export default Championsleague;
