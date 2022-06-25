@@ -64,7 +64,7 @@ useEffect(() => {
         </div>
       ) : (
         <div>
-          <div class={style.ldsripple}>
+          <div className={style.ldsripple}>
             <div></div>
             <div></div>
           </div>

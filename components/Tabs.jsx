@@ -14,7 +14,7 @@ const Tabs = ({loading ,comp,matches,standings,week}) => {
       tabTitle: "STANDINGS",
       content: !loading ? ( <Standings standings={standings} />) : (
         <div style={{ display:"flex", marginTop:"1rem", justifyContent:"center !important"}}>
-          <div class={styl.ldsripple}>
+          <div className={styl.ldsripple}>
             <div></div>
             <div></div>
           </div>
@@ -28,7 +28,7 @@ const Tabs = ({loading ,comp,matches,standings,week}) => {
         <MatchCard matches={matches} week={week} />
       ) : (
         <div style={{ display: "block", width: "632px" }}>
-          <div class={styl.ldsripple}>
+          <div className={styl.ldsripple}>
             <div></div>
             <div></div>
           </div>

@@ -14,8 +14,8 @@ const [currentTab, setCurrentTab] = useState("1");
   const tabs = [
     {
       id: 1,
-      tabTitle: "Tab 1",
-      title: "Title 1",
+      tabTitle: "STANDINGS",
+      title: "STANDINGS",
       content: (
         <>
           {standings ? (
@@ -46,7 +46,7 @@ const [currentTab, setCurrentTab] = useState("1");
               </div>
             ))
           ) : (
-            <div class={styl.ldsripple}>
+            <div className={styl.ldsripple}>
               "loading"
               <div>loading</div>
               <div></div>
@@ -57,8 +57,8 @@ const [currentTab, setCurrentTab] = useState("1");
     },
     {
       id: 2,
-      tabTitle: "Tab 2",
-      title: "Title 2",
+      tabTitle: "MATCHES",
+      title: "MATCHES",
       content: (
         <div style={{ display: "block", width: "632px" }}>
           <div class={styl.ldsripple}>
@@ -86,15 +86,6 @@ const [currentTab, setCurrentTab] = useState("1");
         "Access-Control-Allow-Origin": "*",
       },
     };
-var second_config = {
-  method: "get",
-  url: "https://api.football-data.org//v4/competitions/CL/matches",
-  headers: {
-    "X-Auth-Token": "12f41e2536a4437ca924f3d11fd95ab4",
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Origin": "*",
-  },
-};
     axios(config)
       .then(function (response) {
         
@@ -103,62 +94,68 @@ var second_config = {
       .catch(function (error) {
         console.log(error);
       });
-      axios(second_config)
-        .then(function (res) {
-          
-          setMatches(res.data.standings);
-        })
-        .catch(function (second_error) {
-          console.log(second_error);
-        });
+     
   }, []);
   return (
-    <Layout>
-<div>
-        <div className="breadcrumbs py-2 mb-3">
-          <Link href={"/"}>
-            <a className="fancy-link router-link-active">All Competitions</a>
-          </Link>
-          <span className="mx-2">/</span>
-          <span className="text-muted">Champions League</span>
+    <div>
+      {/* <Head>
+         <title>Champions League</title>
+         <meta name="description" content="Developed By MoscDev" />
+         <link rel="icon" href="/favicon.ico" />
+        
+      </Head> */}
+      <div className="breadcrumbs py-2 mb-3">
+        <Link href={"/"}>
+          <a className="fancy-link router-link-active">All Competitions</a>
+        </Link>
+        <span className="mx-2">/</span>
+        <span className="text-muted">Champions League</span>
+      </div>
+      <h4 className="text-primary">
+        <strong>Champions League</strong>
+      </h4>
+      <div>
+        <div
+          className="tabs"
+          style={{
+            backgroundColor: "#DD7C00",
+            height: "53px",
+            padding: "0 15px",
+          }}
+        >
+          {tabs.map((tab, i) => (
+            <button
+              style={{ fontSize: "20px", lineHeight: "24px" }}
+              key={i}
+              id={tab.id}
+              disabled={currentTab === `${tab.id}`}
+              onClick={handleTabClick}
+            >
+              {tab.tabTitle}
+            </button>
+          ))}
         </div>
-        <h4 className="text-primary">
-          <strong>Champions League</strong>
-        </h4>
         <div>
-          <div className="tabs" style={{ backgroundColor: "#DD7C00" }}>
-            {tabs.map((tab, i) => (
-              <button
-                key={i}
-                id={tab.id}
-                disabled={currentTab === `${tab.id}`}
-                onClick={handleTabClick}
-              >
-                {tab.tabTitle}
-              </button>
-            ))}
-          </div>
-          <div>
-            {tabs.map((tab, i) => (
-              <div key={i}>
-                {currentTab === `${tab.id}` && (
-                  <div>
-                    <div>{tab.content}</div>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+          {tabs.map((tab, i) => (
+            <div key={i}>
+              {currentTab === `${tab.id}` && (
+                <div>
+                  <div>{tab.content}</div>
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
-    </Layout>
+    </div>
+
     // <div>
     //   <Head>
     //     <title>Champions League</title>
     //     <meta name="description" content="Developed By MoscDev" />
     //     <link rel="icon" href="/favicon.ico" />
     //   </Head>
-      
+
     // </div>
   );
 }
