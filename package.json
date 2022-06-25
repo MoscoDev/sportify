@@ -19,7 +19,7 @@
     "eslint": "8.17.0",
     "eslint-config-next": "12.1.6"
   },
-  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "description": ".",
   "main": "next.config.js",
   "repository": {
     "type": "git",
@@ -29,6 +29,10 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MoscoDev/sportify/issues"
+  },
+   "engines" : { 
+    "npm" : ">=7.0.0",
+    "node" : ">=16.0.0"
   },
   "homepage": "https://github.com/MoscoDev/sportify#readme"
 }
