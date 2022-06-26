@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Container from "./Container";
-import style from "../styles/Container.module.css";
+import styl from "../styles/Container.module.css";
 import CompetitionCard from "./CompetitionCard";
 import Link from "next/link";
 var axios = require("axios");
 function AllCompetitions() {
   const [competitions, setCompetitions] = useState([])
+  const [loading, setLoading] = useState(true)
   var axios = require("axios");
 useEffect(() => {
   var config = {
@@ -21,7 +22,12 @@ useEffect(() => {
   axios(config)
     .then(function (response) {
       setCompetitions(response.data.competitions)
-      console.log(response.data.competitions)
+      console.log(response.data.competitions); 
+      if(competitions !== []){
+            setLoading(false)
+          }else{
+            setLoading(true)
+          };
     })
     .catch(function (error) {
       console.log(error);
@@ -31,7 +37,7 @@ useEffect(() => {
   return (
     <div>
       <h4>All Competitions</h4>
-      {competitions ? (
+      {!loading ? (
         <div className="competitionwrap">
           {competitions?.map((competition) => (
             <Link key={competition.id}
@@ -44,15 +50,7 @@ useEffect(() => {
                   : { pathname: "/competitions/championsleague" }
               }
             >
-            <a className="style."
-              // style={{ display: "block", width: "48%" }}
-              // href={{
-                // competition?.code !== "CL"
-                //   ? `/competitions/${[competition.code]}`
-                     
-                //   :"/competitions/championsleague" 
-              // }}
-            >
+            <a>
               <CompetitionCard
                 key={competition.id}
                 emblem={competition.emblem}
@@ -64,8 +62,8 @@ useEffect(() => {
           ))}
         </div>
       ) : (
-        <div>
-          <div className={style.ldsripple}>
+        <div style={{ display: "block", width: "632px" }}>
+          <div className={styl.ldsripple}>
             <div></div>
             <div></div>
           </div>
