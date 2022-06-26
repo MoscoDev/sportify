@@ -91,9 +91,8 @@
   min-width: 30px;
   text-align: center;
 }
-/* @media (max-width: 657px){
+@media (max-width: 657px){
   .standingsgroup{
-    overflow-x: scroll;
-    width: 100% !important;
+    overflow-x: scroll !important;
   }
-} */
+}

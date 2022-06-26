@@ -8,7 +8,7 @@ function Header() {
       <div className={style.overlay}>
         <div className={style.imageContainer}>
           <div className={style.logo}>
-            <Image layout="fill" src="/logo.efdde25b.png" alt="sportify logo" />
+            <img src="/logo.efdde25b.png" alt="sportify logo" />
           </div>
         </div>
       </div>

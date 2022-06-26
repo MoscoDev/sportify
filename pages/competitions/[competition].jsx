@@ -15,10 +15,18 @@ const Post = () => {
      location = window.location.pathname 
     //  return location;
    };
-useEffect(() => {
-  Pathname()
-setLocation(location);
+useEffect(
+  () => {
+    Pathname();
+    setLocation(location);
+  },[]
+);
 
+  
+  
+
+  useEffect(() => {
+    
  
     var config = {
       method: "get",
@@ -35,19 +43,21 @@ setLocation(location);
 
     axios(config)
       .then(function (response) {
-        // console.log(JSON.stringify(response.data.matches));
+        console.log(JSON.stringify(response.data.matches));
         setMatches(response.data.matches);
         setComp(response.data.competition.name);
-        setweek(response.data.filters.matchday); if(standings !== []){
-            setLoading(false)
+        setweek(response.data.filters.matchday); 
+        if(standings !== []){
+             setLoading(false)
+          }else{
+            setLoading(true)
+          
           };
       })
       .catch(function (error) {
         console.log(error);
       })
-      // .finally(() => {
-      //   setLoading(false);
-      // });
+
       var config = {
         method: "get",
         url:
@@ -61,26 +71,23 @@ setLocation(location);
 
       axios(config)
         .then(function (response) {
-          // console.log(JSON.stringify(response.data.standings[0].table));
+          console.log(JSON.stringify(response.data.standings[0].table));
           setStandings(response.data.standings[0].table);
           if(standings !== []){
             setLoading(false)
+          }else{
+            setLoading(true)
           };
         })
         .catch(function (error) {
           console.log(error);
         })
+
+
         // .finally((response) => {
         //   response.statusCode
         //   setLoading(false);
         // });
-},[] ,location)
-
-  
-  
-
-  useEffect(() => {
-    
   }, []);
   
   return (<Tabs loading={loading} comp={comp} matches={matches} week={week} standings={standings}/>)

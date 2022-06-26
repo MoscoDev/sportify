@@ -5,7 +5,7 @@ function CompetitionCard({emblem, title, area}) {
   return (
     <div className={style.CompetitionCard}>
       {/* <div className="emblem"> */}
-      <Image layout="fill" src={emblem} alt="" style={{ maxWidth: "80px" }} />
+      <img  src={emblem} alt=""style={{ maxWidth: "80px" }} />
       {/* </div> */}
       <div className="text">
         <h4 className="titles">{title}</h4>

@@ -21,12 +21,13 @@ useEffect(() => {
   axios(config)
     .then(function (response) {
       setCompetitions(response.data.competitions)
+      console.log(response.data.competitions)
     })
     .catch(function (error) {
       console.log(error);
     });
 
-  })
+  }, [])
   return (
     <div>
       <h4>All Competitions</h4>

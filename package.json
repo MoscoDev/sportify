@@ -10,10 +10,11 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
-    "next": "12.1.6",
+    "next": "^12.1.6",
     "next-pwa": "^5.5.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "sharp": "^0.30.7"
   },
   "devDependencies": {
     "eslint": "8.17.0",
@@ -30,9 +31,9 @@
   "bugs": {
     "url": "https://github.com/MoscoDev/sportify/issues"
   },
-   "engines" : { 
-    "npm" : ">=7.0.0",
-    "node" : ">=16.0.0"
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=16.0.0"
   },
   "homepage": "https://github.com/MoscoDev/sportify#readme"
 }

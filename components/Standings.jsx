@@ -42,7 +42,7 @@ function Standings({ standings }) {
                   src={standing.team.crest}
                   alt=""
                   width={"30px"}
-                  height={"auto"}
+                  height={"30px"}
                 />
 
                 {standing.team.name}
