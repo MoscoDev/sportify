@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
-import styl from "../../styles/Container.module.css";
-import style from "../../styles/championsleague.module.css";
+import styl from "../styles/Container.module.css";
+import style from "../styles/championsleague.module.css";
 import Link from "next/link";
 
 var axios = require("axios");
