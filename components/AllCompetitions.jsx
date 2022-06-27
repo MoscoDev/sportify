@@ -56,13 +56,20 @@ function AllCompetitions() {
                   emblem={competition.emblem}
                   title={competition.name}
                   area={competition.area.name}
+                  flag={competition.area.flag}
                 />
               </a>
             </Link>
           ))}
         </div>
       ) : (
-        <div style={{ display: "block", width: "632px" }}>
+        <div
+          style={{
+            display: "flex",
+            marginTop: "1rem",
+            justifyContent: "center !important",
+          }}
+        >
           <div className={styl.ldsripple}>
             <div></div>
             <div></div>

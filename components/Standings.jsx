@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "../styles/Championsleague.module.css";
-import styles from "../styles/Container.module.css";
-import Image from "next/image"
+
 var axios = require("axios");
 
 function Standings({ standings }) {
@@ -38,7 +37,7 @@ function Standings({ standings }) {
                 className={style["team-name"]}
                 style={{ alignItems: "center", fontWeight: "600" }}
               >
-                <Image
+                <img
                   src={standing.team.crest}
                   alt=""
                   width={"30px"}
