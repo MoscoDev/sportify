@@ -31,9 +31,5 @@
   "bugs": {
     "url": "https://github.com/MoscoDev/sportify/issues"
   },
-  "engines": {
-    "npm": ">=7.0.0",
-    "node": ">=16.0.0"
-  },
   "homepage": "https://github.com/MoscoDev/sportify#readme"
 }
