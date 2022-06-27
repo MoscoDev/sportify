@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import style from "../styles/championsleague.module.css";
+import style from "../styles/Championsleague.module.css";
 import styles from "../styles/Container.module.css";
 import Image from "next/image"
 var axios = require("axios");

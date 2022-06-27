@@ -1,10 +1,6 @@
 import Head from "next/head";
 import AllCompetitions from "../components/AllCompetitions";
-import Header from "../components/Header";
-import Standings from "../components/Standings";
-import Tabs from "../components/Tabs";
 import styles from "../styles/Home.module.css";
-import style from "../styles/Container.module.css";
 
 export default function Home() {
   return (
