@@ -47,7 +47,7 @@ useEffect(() => {
                       pathname: "/competitions/[slug]",
                       query: { slug: competition.code },
                     }
-                  : { pathname: "/competitions/championsleague" }
+                  : { pathname: "/competitions/CL" }
               }
             >
             <a>
