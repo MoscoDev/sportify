@@ -10,5 +10,14 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  async rewrites() {
+    return [
+      {
+        source: "/sapi/:path*",
+        destination: "https://api.football-data.org/:path*",
+      },
+    ];
+  },
+  // rewrites
 };
 module.exports = nextConfig;
